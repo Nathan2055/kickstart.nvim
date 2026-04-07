@@ -30,16 +30,7 @@ require('lazy').setup({
 
   require 'kickstart.unbundled-plugins.08-nightfox',
 
-  -- Highlight todo, notes, etc in comments
-  {
-    'folke/todo-comments.nvim',
-    event = 'VimEnter',
-    dependencies = { 'nvim-lua/plenary.nvim' },
-    ---@module 'todo-comments'
-    ---@type TodoOptions
-    ---@diagnostic disable-next-line: missing-fields
-    opts = { signs = false },
-  },
+  require 'kickstart.unbundled-plugins.09-todo-comments',
 
   { -- Collection of various small independent plugins/modules
     'nvim-mini/mini.nvim',
