@@ -8,7 +8,7 @@
 ---@module 'lazy'
 ---@type LazySpec
 return {
-      { -- Fuzzy Finder (files, lsp, etc)
+  { -- Fuzzy Finder (files, lsp, etc)
     'nvim-telescope/telescope.nvim',
     -- By default, Telescope is included and acts as your picker for everything.
 

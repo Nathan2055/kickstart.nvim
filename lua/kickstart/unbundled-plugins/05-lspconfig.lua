@@ -1,7 +1,7 @@
 ---@module 'lazy'
 ---@type LazySpec
 return {
-      -- LSP Plugins
+  -- LSP Plugins
   {
     -- Main LSP Configuration
     'neovim/nvim-lspconfig',

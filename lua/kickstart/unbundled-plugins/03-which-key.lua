@@ -15,7 +15,7 @@
 ---@module 'lazy'
 ---@type LazySpec
 return {
-    { -- Useful plugin to show you pending keybinds.
+  { -- Useful plugin to show you pending keybinds.
     'folke/which-key.nvim',
     event = 'VimEnter',
     ---@module 'which-key'
