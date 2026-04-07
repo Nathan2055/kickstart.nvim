@@ -1,3 +1,5 @@
+-- indent-blankline
+-- https://github.com/lukas-reineke/indent-blankline.nvim
 -- Add indentation guides even on blank lines
 
 ---@module 'lazy'

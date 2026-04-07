@@ -1,3 +1,7 @@
+-- Nightfox
+-- https://github.com/EdenEast/nightfox.nvim
+-- Theme definition
+
 ---@module 'lazy'
 ---@type LazySpec
 return {
@@ -16,5 +20,3 @@ return {
     end,
   },
 }
-
--- vim: ts=2 sts=2 sw=2 et

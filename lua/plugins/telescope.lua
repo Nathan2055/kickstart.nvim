@@ -1,14 +1,10 @@
--- NOTE: Plugins can specify dependencies.
---
--- The dependencies are proper plugin specifications as well - anything
--- you do for a plugin at the top level, you can do for a dependency.
---
--- Use the `dependencies` key to specify the dependencies of a particular plugin
+-- Telescope
+-- https://github.com/nvim-telescope/telescope.nvim
+-- Fuzzy Finder (files, lsp, etc)
 
 ---@module 'lazy'
 ---@type LazySpec
 return {
-  { -- Fuzzy Finder (files, lsp, etc)
     'nvim-telescope/telescope.nvim',
     -- By default, Telescope is included and acts as your picker for everything.
 
@@ -154,7 +150,4 @@ return {
       -- Shortcut for searching your Neovim configuration files
       vim.keymap.set('n', '<leader>sn', function() builtin.find_files { cwd = vim.fn.stdpath 'config' } end, { desc = '[S]earch [N]eovim files' })
     end,
-  },
 }
-
--- vim: ts=2 sts=2 sw=2 et

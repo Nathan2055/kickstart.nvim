@@ -1,5 +1,6 @@
 -- autopairs
 -- https://github.com/windwp/nvim-autopairs
+-- Automatic parenthesis and quote pairing
 
 ---@module 'lazy'
 ---@type LazySpec
