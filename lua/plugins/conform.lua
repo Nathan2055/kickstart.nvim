@@ -4,6 +4,7 @@
 
 ---@module 'lazy'
 ---@type LazySpec
+---@diagnostic disable-next-line: missing-fields
 return {
   'stevearc/conform.nvim',
   event = { 'BufWritePre' },
@@ -18,6 +19,7 @@ return {
   },
   ---@module 'conform'
   ---@type conform.setupOpts
+  ---@diagnostic disable-next-line: missing-fields
   opts = {
     notify_on_error = false,
     format_on_save = function(bufnr)
