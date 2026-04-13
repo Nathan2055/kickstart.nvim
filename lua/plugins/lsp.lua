@@ -140,6 +140,17 @@ return {
 
       stylua = {}, -- Used to format Lua code
 
+      -- BEGIN language servers
+      clangd = {},
+      gopls = {},
+      pyright = {},
+      rust_analyzer = {},
+      ts_ls = {},
+      tailwindcss = {
+        filetypes = { "html", "css", "scss", "javascript", "javascriptreact", "typescript", "typescriptreact", "vue", "svelte", "heex" },
+      },
+      -- END language servers
+
       -- Special Lua Config, as recommended by neovim help docs
       lua_ls = {
         on_init = function(client)
