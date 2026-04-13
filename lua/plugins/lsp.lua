@@ -142,9 +142,8 @@ return {
 
       -- BEGIN language servers
       clangd = {},
-      python-lsp-server = {},
+      pylsp = {},
       rust_analyzer = {},
-      },
       -- END language servers
 
       -- Special Lua Config, as recommended by neovim help docs
