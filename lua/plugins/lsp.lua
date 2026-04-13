@@ -142,12 +142,8 @@ return {
 
       -- BEGIN language servers
       clangd = {},
-      gopls = {},
-      pyright = {},
+      python-lsp-server = {},
       rust_analyzer = {},
-      ts_ls = {},
-      tailwindcss = {
-        filetypes = { "html", "css", "scss", "javascript", "javascriptreact", "typescript", "typescriptreact", "vue", "svelte", "heex" },
       },
       -- END language servers
 
