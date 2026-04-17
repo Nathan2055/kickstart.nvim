@@ -59,6 +59,8 @@ vim.keymap.set({ 'n' }, '<A-l>', '<C-w>l', { desc = 'Move focus to the right win
 -- barbar: Move to previous/next
 vim.keymap.set({ 'n' }, '<A-,>', '<Cmd>BufferPrevious<CR>', { desc = 'Move to previous buffer' })
 vim.keymap.set({ 'n' }, '<A-.>', '<Cmd>BufferNext<CR>', { desc = 'Move to next buffer' })
+vim.keymap.set({ 'n' }, '<leader>b,', '<Cmd>BufferPrevious<CR>', { desc = 'Move to previous buffer' })
+vim.keymap.set({ 'n' }, '<leader>b.', '<Cmd>BufferNext<CR>', { desc = 'Move to next buffer' })
 vim.keymap.set({ 'n' }, '<leader>bg,', '<Cmd>BufferPrevious<CR>', { desc = 'Move to previous buffer' })
 vim.keymap.set({ 'n' }, '<leader>bg.', '<Cmd>BufferNext<CR>', { desc = 'Move to next buffer' })
 
