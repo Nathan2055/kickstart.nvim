@@ -56,21 +56,20 @@ vim.keymap.set({ 'n' }, '<A-j>', '<C-w>j', { desc = 'Move focus to the lower win
 vim.keymap.set({ 'n' }, '<A-k>', '<C-w>k', { desc = 'Move focus to the upper window' })
 vim.keymap.set({ 'n' }, '<A-l>', '<C-w>l', { desc = 'Move focus to the right window' })
 
--- barbar: Move to previous/next
+-- barbar: buffer management keybinds
+--  Move to previous/next
 vim.keymap.set({ 'n' }, '<A-,>', '<Cmd>BufferPrevious<CR>', { desc = 'Move to previous buffer' })
 vim.keymap.set({ 'n' }, '<A-.>', '<Cmd>BufferNext<CR>', { desc = 'Move to next buffer' })
 vim.keymap.set({ 'n' }, '<leader>b,', '<Cmd>BufferPrevious<CR>', { desc = 'Move to previous buffer' })
 vim.keymap.set({ 'n' }, '<leader>b.', '<Cmd>BufferNext<CR>', { desc = 'Move to next buffer' })
 vim.keymap.set({ 'n' }, '<leader>bg,', '<Cmd>BufferPrevious<CR>', { desc = 'Move to previous buffer' })
 vim.keymap.set({ 'n' }, '<leader>bg.', '<Cmd>BufferNext<CR>', { desc = 'Move to next buffer' })
-
--- barbar: Re-order to previous/next
+--  Re-order to previous/next
 vim.keymap.set({ 'n' }, '<A-<>', '<Cmd>BufferMovePrevious<CR>', { desc = 'Reorder after previous buffer' })
 vim.keymap.set({ 'n' }, '<A->>', '<Cmd>BufferMoveNext<CR>', { desc = 'Reorder after next buffer' })
 vim.keymap.set({ 'n' }, '<leader>b<', '<Cmd>BufferMovePrevious<CR>', { desc = 'Reorder after previous buffer' })
 vim.keymap.set({ 'n' }, '<leader>b>', '<Cmd>BufferMoveNext<CR>', { desc = 'Reorder after next buffer' })
-
--- barbar: Goto buffer in position...
+--  Goto buffer in position...
 vim.keymap.set({ 'n' }, '<A-1>', '<Cmd>BufferGoto 1<CR>', { desc = 'Goto buffer 1' })
 vim.keymap.set({ 'n' }, '<A-2>', '<Cmd>BufferGoto 2<CR>', { desc = 'Goto buffer 2' })
 vim.keymap.set({ 'n' }, '<A-3>', '<Cmd>BufferGoto 3<CR>', { desc = 'Goto buffer 3' })
@@ -91,36 +90,26 @@ vim.keymap.set({ 'n' }, '<leader>bg7', '<Cmd>BufferGoto 7<CR>', { desc = 'Goto b
 vim.keymap.set({ 'n' }, '<leader>bg8', '<Cmd>BufferGoto 8<CR>', { desc = 'Goto buffer [8]' })
 vim.keymap.set({ 'n' }, '<leader>bg9', '<Cmd>BufferGoto 9<CR>', { desc = 'Goto buffer [9]' })
 vim.keymap.set({ 'n' }, '<leader>bg0', '<Cmd>BufferLast<CR>', { desc = 'Goto last buffer' })
-
--- barbar: Pin/unpin buffer
---vim.keymap.set({ 'n' }, '<A-p>', '<Cmd>BufferPin<CR>', { desc = 'Pin/unpin buffer' })
+--  Pin/unpin buffer
 vim.keymap.set({ 'n' }, '<leader>bpn', '<Cmd>BufferPin<CR>', { desc = 'Pi[n]/unpin buffer' })
-
--- barbar: Goto pinned/unpinned buffer
+--  Magic buffer-picking mode
+vim.keymap.set({ 'n' }, '<leader>bpp', '<Cmd>BufferPick<CR>', { desc = '[P]ick buffer' })
+vim.keymap.set({ 'n' }, '<leader>bpd', '<Cmd>BufferPickDelete<CR>', { desc = 'Pick [d]elete buffer' })
+--  Goto pinned/unpinned buffer
 vim.keymap.set({ 'n' }, '<leader>bgp', '<Cmd>BufferGotoPinned<CR>', { desc = 'Goto [p]inned buffer' })
 vim.keymap.set({ 'n' }, '<leader>bgu', '<Cmd>BufferGotoUnpinned<CR>', { desc = 'Goto [u]npinned buffer' })
-
--- barbar: Close buffer
+--  Close buffer
 vim.keymap.set({ 'n' }, '<A-c>', '<Cmd>BufferClose<CR>', { desc = 'Close buffer' })
 vim.keymap.set({ 'n' }, '<leader>bc', '<Cmd>BufferClose<CR>', { desc = '[C]lose buffer' })
-
--- barbar: Wipeout buffer
+--  Wipeout buffer
 vim.keymap.set({ 'n' }, '<leader>bw', '<Cmd>BufferWipeout<CR>', { desc = '[W]ipeout buffer' })
-
--- barbar: Close commands
+--  Close multiple buffers
 vim.keymap.set({ 'n' }, '<leader>bmc', '<Cmd>BufferCloseAllButCurrent<CR>', { desc = 'Close all except [c]urrent' })
 vim.keymap.set({ 'n' }, '<leader>bmp', '<Cmd>BufferCloseAllButPinned<CR>', { desc = 'Close all except [p]inned' })
 vim.keymap.set({ 'n' }, '<leader>bmo', '<Cmd>BufferCloseAllButCurrentOrPinned<CR>', { desc = 'Close all except current [o]r pinned' })
 vim.keymap.set({ 'n' }, '<leader>bml', '<Cmd>BufferCloseBuffersLeft<CR>', { desc = 'Close all to [l]eft' })
 vim.keymap.set({ 'n' }, '<leader>bmr', '<Cmd>BufferCloseBuffersRight<CR>', { desc = 'Close all to [r]ight' })
-
--- barbar: Magic buffer-picking mode
---vim.keymap.set({ 'n' }, '<C-p>', '<Cmd>BufferPick<CR>', { desc = '' })
---vim.keymap.set({ 'n' }, '<C-s-p>', '<Cmd>BufferPickDelete<CR>', { desc = '' })
-vim.keymap.set({ 'n' }, '<leader>bpp', '<Cmd>BufferPick<CR>', { desc = '[P]ick buffer' })
-vim.keymap.set({ 'n' }, '<leader>bpd', '<Cmd>BufferPickDelete<CR>', { desc = 'Pick [d]elete buffer' })
-
--- barbar: Sort automatically by...
+--  Sort buffers automatically by...
 vim.keymap.set({ 'n' }, '<leader>bsb', '<Cmd>BufferOrderByBufferNumber<CR>', { desc = 'Sort buffers by [b]uffer number' })
 vim.keymap.set({ 'n' }, '<leader>bsn', '<Cmd>BufferOrderByName<CR>', { desc = 'Sort buffers by [n]ame' })
 vim.keymap.set({ 'n' }, '<leader>bsd', '<Cmd>BufferOrderByDirectory<CR>', { desc = 'Sort buffers by [d]irectory' })
