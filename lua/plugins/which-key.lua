@@ -21,6 +21,12 @@ return {
       { '<leader>t', group = '[T]oggle' },
       { '<leader>h', group = 'Git [H]unk', mode = { 'n', 'v' } }, -- Enable gitsigns recommended keymaps first
       { 'gr', group = 'LSP Actions', mode = { 'n' } },
+      -- Barbar keymap groups
+      { '<leader>b', group = '[B]uffer actions', mode = { 'n' } },
+      { '<leader>bg', group = '[G]oto buffer', mode = { 'n' } },
+      { '<leader>bp', group = '[P]ick/pin buffers', mode = { 'n' } },
+      { '<leader>bm', group = 'Close [m]ultiple buffers', mode = { 'n' } },
+      { '<leader>bs', group = '[S]ort buffers', mode = { 'n' } },
     },
   },
 }
