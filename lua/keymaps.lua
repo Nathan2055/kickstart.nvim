@@ -116,6 +116,9 @@ vim.keymap.set({ 'n' }, '<leader>bsd', '<Cmd>BufferOrderByDirectory<CR>', { desc
 vim.keymap.set({ 'n' }, '<leader>bsl', '<Cmd>BufferOrderByLanguage<CR>', { desc = 'Sort buffers by [l]anguage' })
 vim.keymap.set({ 'n' }, '<leader>bsw', '<Cmd>BufferOrderByWindowNumber<CR>', { desc = 'Sort buffers by [w]indow number' })
 
+-- Neotree: toggle
+vim.keymap.set({ 'n' }, '<leader>n', '<Cmd>Neotree toggle<CR>', { desc = 'Toggle [N]eotree directory view' })
+
 -- [[ Basic Autocommands ]]
 --  See `:help lua-guide-autocommands`
 
