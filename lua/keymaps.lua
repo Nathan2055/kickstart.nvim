@@ -56,66 +56,60 @@ vim.keymap.set({ 'n' }, '<A-j>', '<C-w>j', { desc = 'Move focus to the lower win
 vim.keymap.set({ 'n' }, '<A-k>', '<C-w>k', { desc = 'Move focus to the upper window' })
 vim.keymap.set({ 'n' }, '<A-l>', '<C-w>l', { desc = 'Move focus to the right window' })
 
--- BEGIN barbar keymaps
-local map = vim.api.nvim_set_keymap
-local opts = { noremap = true, silent = true }
+-- barbar: Move to previous/next
+vim.keymap.set('n', '<A-,>', '<Cmd>BufferPrevious<CR>', { desc = 'Move to previous buffer' })
+vim.keymap.set('n', '<A-.>', '<Cmd>BufferNext<CR>', { desc = 'Move to next buffer' })
 
--- Move to previous/next
-map('n', '<A-,>', '<Cmd>BufferPrevious<CR>', opts)
-map('n', '<A-.>', '<Cmd>BufferNext<CR>', opts)
+-- barbar: Re-order to previous/next
+vim.keymap.set('n', '<A-<>', '<Cmd>BufferMovePrevious<CR>', { desc = 'Reorder after previous buffer' })
+vim.keymap.set('n', '<A->>', '<Cmd>BufferMoveNext<CR>', { desc = 'Reorder after next buffer' })
 
--- Re-order to previous/next
-map('n', '<A-<>', '<Cmd>BufferMovePrevious<CR>', opts)
-map('n', '<A->>', '<Cmd>BufferMoveNext<CR>', opts)
+-- barbar: Goto buffer in position...
+vim.keymap.set('n', '<A-1>', '<Cmd>BufferGoto 1<CR>', { desc = 'Goto buffer 1' })
+vim.keymap.set('n', '<A-2>', '<Cmd>BufferGoto 2<CR>', { desc = 'Goto buffer 2' })
+vim.keymap.set('n', '<A-3>', '<Cmd>BufferGoto 3<CR>', { desc = 'Goto buffer 3' })
+vim.keymap.set('n', '<A-4>', '<Cmd>BufferGoto 4<CR>', { desc = 'Goto buffer 4' })
+vim.keymap.set('n', '<A-5>', '<Cmd>BufferGoto 5<CR>', { desc = 'Goto buffer 5' })
+vim.keymap.set('n', '<A-6>', '<Cmd>BufferGoto 6<CR>', { desc = 'Goto buffer 6' })
+vim.keymap.set('n', '<A-7>', '<Cmd>BufferGoto 7<CR>', { desc = 'Goto buffer 7' })
+vim.keymap.set('n', '<A-8>', '<Cmd>BufferGoto 8<CR>', { desc = 'Goto buffer 8' })
+vim.keymap.set('n', '<A-9>', '<Cmd>BufferGoto 9<CR>', { desc = 'Goto buffer 9' })
+vim.keymap.set('n', '<A-0>', '<Cmd>BufferLast<CR>', { desc = 'Goto last buffer' })
 
--- Goto buffer in position...
-map('n', '<A-1>', '<Cmd>BufferGoto 1<CR>', opts)
-map('n', '<A-2>', '<Cmd>BufferGoto 2<CR>', opts)
-map('n', '<A-3>', '<Cmd>BufferGoto 3<CR>', opts)
-map('n', '<A-4>', '<Cmd>BufferGoto 4<CR>', opts)
-map('n', '<A-5>', '<Cmd>BufferGoto 5<CR>', opts)
-map('n', '<A-6>', '<Cmd>BufferGoto 6<CR>', opts)
-map('n', '<A-7>', '<Cmd>BufferGoto 7<CR>', opts)
-map('n', '<A-8>', '<Cmd>BufferGoto 8<CR>', opts)
-map('n', '<A-9>', '<Cmd>BufferGoto 9<CR>', opts)
-map('n', '<A-0>', '<Cmd>BufferLast<CR>', opts)
+-- barbar: Pin/unpin buffer
+vim.keymap.set('n', '<A-p>', '<Cmd>BufferPin<CR>', { desc = 'Pin/unpin buffer' })
 
--- Pin/unpin buffer
-map('n', '<A-p>', '<Cmd>BufferPin<CR>', opts)
-
--- Goto pinned/unpinned buffer
+-- barbar: Goto pinned/unpinned buffer
 --                 :BufferGotoPinned
 --                 :BufferGotoUnpinned
 
--- Close buffer
-map('n', '<A-c>', '<Cmd>BufferClose<CR>', opts)
+-- barbar: Close buffer
+vim.keymap.set('n', '<A-c>', '<Cmd>BufferClose<CR>', { desc = 'Close buffer' })
 
--- Wipeout buffer
+-- barbar: Wipeout buffer
 --                 :BufferWipeout
 
--- Close commands
+-- barbar: Close commands
 --                 :BufferCloseAllButCurrent
 --                 :BufferCloseAllButPinned
 --                 :BufferCloseAllButCurrentOrPinned
 --                 :BufferCloseBuffersLeft
 --                 :BufferCloseBuffersRight
 
--- Magic buffer-picking mode
-map('n', '<C-p>', '<Cmd>BufferPick<CR>', opts)
-map('n', '<C-s-p>', '<Cmd>BufferPickDelete<CR>', opts)
+-- barbar: Magic buffer-picking mode
+vim.keymap.set('n', '<C-p>', '<Cmd>BufferPick<CR>', { desc = '' })
+vim.keymap.set('n', '<C-s-p>', '<Cmd>BufferPickDelete<CR>', { desc = '' })
 
--- Sort automatically by...
-map('n', '<Space>bb', '<Cmd>BufferOrderByBufferNumber<CR>', opts)
-map('n', '<Space>bn', '<Cmd>BufferOrderByName<CR>', opts)
-map('n', '<Space>bd', '<Cmd>BufferOrderByDirectory<CR>', opts)
-map('n', '<Space>bl', '<Cmd>BufferOrderByLanguage<CR>', opts)
-map('n', '<Space>bw', '<Cmd>BufferOrderByWindowNumber<CR>', opts)
+-- barbar: Sort automatically by...
+vim.keymap.set('n', '<Space>bb', '<Cmd>BufferOrderByBufferNumber<CR>', { desc = 'Sort buffers by [b]uffer number' })
+vim.keymap.set('n', '<Space>bn', '<Cmd>BufferOrderByName<CR>', { desc = 'Sort buffers by [n]ame' })
+vim.keymap.set('n', '<Space>bd', '<Cmd>BufferOrderByDirectory<CR>', { desc = 'Sort buffers by [d]irectory' })
+vim.keymap.set('n', '<Space>bl', '<Cmd>BufferOrderByLanguage<CR>', { desc = 'Sort buffers by [l]anguage' })
+vim.keymap.set('n', '<Space>bw', '<Cmd>BufferOrderByWindowNumber<CR>', { desc = 'Sort buffers by [w]indow number' })
 
--- Other:
+-- barbar: Other
 -- :BarbarEnable - enables barbar (enabled by default)
 -- :BarbarDisable - very bad command, should never be used
-
--- END barbar keymaps
 
 -- [[ Basic Autocommands ]]
 --  See `:help lua-guide-autocommands`
