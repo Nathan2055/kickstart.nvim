@@ -7,5 +7,5 @@
 return {
   'nvim-lualine/lualine.nvim',
   dependencies = { 'nvim-tree/nvim-web-devicons' },
-  opts = { theme = 'vscode', },
+  opts = { theme = 'vscode' },
 }

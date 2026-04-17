@@ -41,7 +41,7 @@ require('lazy').setup({
   -- automatically fetches all plugin specs in lua/plugins
   spec = {
     -- import your plugins
-    { import = "plugins" },
+    { import = 'plugins' },
   },
 
   -- NOTE: Plugins can be added via a link or github org/name. To run setup automatically, use `opts = {}`
