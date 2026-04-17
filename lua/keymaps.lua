@@ -3,7 +3,7 @@
 
 -- Clear highlights on search when pressing <Esc> in normal mode
 --  See `:help hlsearch`
-vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
+vim.keymap.set({ 'n' }, '<Esc>', '<cmd>nohlsearch<CR>')
 
 -- Diagnostic Config & Keymaps
 -- See :help vim.diagnostic.Opts
@@ -21,7 +21,7 @@ vim.diagnostic.config {
   jump = { float = true },
 }
 
-vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnostic [Q]uickfix list' })
+vim.keymap.set({ 'n' }, '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnostic [Q]uickfix list' })
 
 -- Exit terminal mode in the builtin terminal with a shortcut that is a bit easier
 -- for people to discover. Otherwise, you normally need to press <C-\><C-n>, which
@@ -29,22 +29,22 @@ vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagn
 --
 -- NOTE: This won't work in all terminal emulators/tmux/etc. Try your own mapping
 -- or just use <C-\><C-n> to exit terminal mode
-vim.keymap.set('t', '<Esc>', '<C-\\><C-n>', { desc = 'Exit terminal mode' })
+vim.keymap.set({ 't' }, '<Esc>', '<C-\\><C-n>', { desc = 'Exit terminal mode' })
 
 -- Keybinds to make split navigation easier.
 --  Use CTRL+<hjkl> to switch between windows
 --
 --  See `:help wincmd` for a list of all window commands
-vim.keymap.set('n', '<C-h>', '<C-w><C-h>', { desc = 'Move focus to the left window' })
-vim.keymap.set('n', '<C-l>', '<C-w><C-l>', { desc = 'Move focus to the right window' })
-vim.keymap.set('n', '<C-j>', '<C-w><C-j>', { desc = 'Move focus to the lower window' })
-vim.keymap.set('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper window' })
+vim.keymap.set({ 'n' }, '<C-h>', '<C-w><C-h>', { desc = 'Move focus to the left window' })
+vim.keymap.set({ 'n' }, '<C-l>', '<C-w><C-l>', { desc = 'Move focus to the right window' })
+vim.keymap.set({ 'n' }, '<C-j>', '<C-w><C-j>', { desc = 'Move focus to the lower window' })
+vim.keymap.set({ 'n' }, '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper window' })
 
 -- NOTE: Some terminals have colliding keymaps or are not able to send distinct keycodes
-vim.keymap.set('n', '<C-S-h>', '<C-w>H', { desc = 'Move window to the left' })
-vim.keymap.set('n', '<C-S-l>', '<C-w>L', { desc = 'Move window to the right' })
-vim.keymap.set('n', '<C-S-j>', '<C-w>J', { desc = 'Move window to the lower' })
-vim.keymap.set('n', '<C-S-k>', '<C-w>K', { desc = 'Move window to the upper' })
+vim.keymap.set({ 'n' }, '<C-S-h>', '<C-w>H', { desc = 'Move window to the left' })
+vim.keymap.set({ 'n' }, '<C-S-l>', '<C-w>L', { desc = 'Move window to the right' })
+vim.keymap.set({ 'n' }, '<C-S-j>', '<C-w>J', { desc = 'Move window to the lower' })
+vim.keymap.set({ 'n' }, '<C-S-k>', '<C-w>K', { desc = 'Move window to the upper' })
 
 -- Map <A-j>, <A-k>, <A-h>, <A-l> to navigate between windows in any modes
 vim.keymap.set({ 't', 'i' }, '<A-h>', '<C-\\><C-n><C-w>h', { desc = 'Move focus to the left window' })
@@ -57,34 +57,34 @@ vim.keymap.set({ 'n' }, '<A-k>', '<C-w>k', { desc = 'Move focus to the upper win
 vim.keymap.set({ 'n' }, '<A-l>', '<C-w>l', { desc = 'Move focus to the right window' })
 
 -- barbar: Move to previous/next
-vim.keymap.set('n', '<A-,>', '<Cmd>BufferPrevious<CR>', { desc = 'Move to previous buffer' })
-vim.keymap.set('n', '<A-.>', '<Cmd>BufferNext<CR>', { desc = 'Move to next buffer' })
+vim.keymap.set({ 'n' }, '<A-,>', '<Cmd>BufferPrevious<CR>', { desc = 'Move to previous buffer' })
+vim.keymap.set({ 'n' }, '<A-.>', '<Cmd>BufferNext<CR>', { desc = 'Move to next buffer' })
 
 -- barbar: Re-order to previous/next
-vim.keymap.set('n', '<A-<>', '<Cmd>BufferMovePrevious<CR>', { desc = 'Reorder after previous buffer' })
-vim.keymap.set('n', '<A->>', '<Cmd>BufferMoveNext<CR>', { desc = 'Reorder after next buffer' })
+vim.keymap.set({ 'n' }, '<A-<>', '<Cmd>BufferMovePrevious<CR>', { desc = 'Reorder after previous buffer' })
+vim.keymap.set({ 'n' }, '<A->>', '<Cmd>BufferMoveNext<CR>', { desc = 'Reorder after next buffer' })
 
 -- barbar: Goto buffer in position...
-vim.keymap.set('n', '<A-1>', '<Cmd>BufferGoto 1<CR>', { desc = 'Goto buffer 1' })
-vim.keymap.set('n', '<A-2>', '<Cmd>BufferGoto 2<CR>', { desc = 'Goto buffer 2' })
-vim.keymap.set('n', '<A-3>', '<Cmd>BufferGoto 3<CR>', { desc = 'Goto buffer 3' })
-vim.keymap.set('n', '<A-4>', '<Cmd>BufferGoto 4<CR>', { desc = 'Goto buffer 4' })
-vim.keymap.set('n', '<A-5>', '<Cmd>BufferGoto 5<CR>', { desc = 'Goto buffer 5' })
-vim.keymap.set('n', '<A-6>', '<Cmd>BufferGoto 6<CR>', { desc = 'Goto buffer 6' })
-vim.keymap.set('n', '<A-7>', '<Cmd>BufferGoto 7<CR>', { desc = 'Goto buffer 7' })
-vim.keymap.set('n', '<A-8>', '<Cmd>BufferGoto 8<CR>', { desc = 'Goto buffer 8' })
-vim.keymap.set('n', '<A-9>', '<Cmd>BufferGoto 9<CR>', { desc = 'Goto buffer 9' })
-vim.keymap.set('n', '<A-0>', '<Cmd>BufferLast<CR>', { desc = 'Goto last buffer' })
+vim.keymap.set({ 'n' }, '<A-1>', '<Cmd>BufferGoto 1<CR>', { desc = 'Goto buffer 1' })
+vim.keymap.set({ 'n' }, '<A-2>', '<Cmd>BufferGoto 2<CR>', { desc = 'Goto buffer 2' })
+vim.keymap.set({ 'n' }, '<A-3>', '<Cmd>BufferGoto 3<CR>', { desc = 'Goto buffer 3' })
+vim.keymap.set({ 'n' }, '<A-4>', '<Cmd>BufferGoto 4<CR>', { desc = 'Goto buffer 4' })
+vim.keymap.set({ 'n' }, '<A-5>', '<Cmd>BufferGoto 5<CR>', { desc = 'Goto buffer 5' })
+vim.keymap.set({ 'n' }, '<A-6>', '<Cmd>BufferGoto 6<CR>', { desc = 'Goto buffer 6' })
+vim.keymap.set({ 'n' }, '<A-7>', '<Cmd>BufferGoto 7<CR>', { desc = 'Goto buffer 7' })
+vim.keymap.set({ 'n' }, '<A-8>', '<Cmd>BufferGoto 8<CR>', { desc = 'Goto buffer 8' })
+vim.keymap.set({ 'n' }, '<A-9>', '<Cmd>BufferGoto 9<CR>', { desc = 'Goto buffer 9' })
+vim.keymap.set({ 'n' }, '<A-0>', '<Cmd>BufferLast<CR>', { desc = 'Goto last buffer' })
 
 -- barbar: Pin/unpin buffer
-vim.keymap.set('n', '<A-p>', '<Cmd>BufferPin<CR>', { desc = 'Pin/unpin buffer' })
+vim.keymap.set({ 'n' }, '<A-p>', '<Cmd>BufferPin<CR>', { desc = 'Pin/unpin buffer' })
 
 -- barbar: Goto pinned/unpinned buffer
 --                 :BufferGotoPinned
 --                 :BufferGotoUnpinned
 
 -- barbar: Close buffer
-vim.keymap.set('n', '<A-c>', '<Cmd>BufferClose<CR>', { desc = 'Close buffer' })
+vim.keymap.set({ 'n' }, '<A-c>', '<Cmd>BufferClose<CR>', { desc = 'Close buffer' })
 
 -- barbar: Wipeout buffer
 --                 :BufferWipeout
@@ -97,15 +97,15 @@ vim.keymap.set('n', '<A-c>', '<Cmd>BufferClose<CR>', { desc = 'Close buffer' })
 --                 :BufferCloseBuffersRight
 
 -- barbar: Magic buffer-picking mode
-vim.keymap.set('n', '<C-p>', '<Cmd>BufferPick<CR>', { desc = '' })
-vim.keymap.set('n', '<C-s-p>', '<Cmd>BufferPickDelete<CR>', { desc = '' })
+vim.keymap.set({ 'n' }, '<C-p>', '<Cmd>BufferPick<CR>', { desc = '' })
+vim.keymap.set({ 'n' }, '<C-s-p>', '<Cmd>BufferPickDelete<CR>', { desc = '' })
 
 -- barbar: Sort automatically by...
-vim.keymap.set('n', '<Space>bb', '<Cmd>BufferOrderByBufferNumber<CR>', { desc = 'Sort buffers by [b]uffer number' })
-vim.keymap.set('n', '<Space>bn', '<Cmd>BufferOrderByName<CR>', { desc = 'Sort buffers by [n]ame' })
-vim.keymap.set('n', '<Space>bd', '<Cmd>BufferOrderByDirectory<CR>', { desc = 'Sort buffers by [d]irectory' })
-vim.keymap.set('n', '<Space>bl', '<Cmd>BufferOrderByLanguage<CR>', { desc = 'Sort buffers by [l]anguage' })
-vim.keymap.set('n', '<Space>bw', '<Cmd>BufferOrderByWindowNumber<CR>', { desc = 'Sort buffers by [w]indow number' })
+vim.keymap.set({ 'n' }, '<Space>bb', '<Cmd>BufferOrderByBufferNumber<CR>', { desc = 'Sort buffers by [b]uffer number' })
+vim.keymap.set({ 'n' }, '<Space>bn', '<Cmd>BufferOrderByName<CR>', { desc = 'Sort buffers by [n]ame' })
+vim.keymap.set({ 'n' }, '<Space>bd', '<Cmd>BufferOrderByDirectory<CR>', { desc = 'Sort buffers by [d]irectory' })
+vim.keymap.set({ 'n' }, '<Space>bl', '<Cmd>BufferOrderByLanguage<CR>', { desc = 'Sort buffers by [l]anguage' })
+vim.keymap.set({ 'n' }, '<Space>bw', '<Cmd>BufferOrderByWindowNumber<CR>', { desc = 'Sort buffers by [w]indow number' })
 
 -- barbar: Other
 -- :BarbarEnable - enables barbar (enabled by default)
